@@ -2,6 +2,8 @@ import { natsWrapper } from "./nats-wrapper";
 import { OrderCreatedListener } from "./events/listeners/order-created-listener";
 
 async function start() {
+  console.log("Starting expiration service ...");
+  
   if (!process.env.NATS_CLIENT_ID) {
     throw new Error("NATS_CLIENT_ID must be defined");
   }
